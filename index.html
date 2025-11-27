@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinding Visualizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">Pathfinding Visualizer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <div class="navbar-nav gap-2">
+                    <button id="btn-visualize-dijkstra" class="btn btn-primary">Dijkstra</button>
+                    <button id="btn-visualize-bfs" class="btn btn-info text-white">BFS</button>
+                    <button id="btn-visualize-dfs" class="btn btn-warning text-white">DFS</button>
+                    <button id="btn-clear" class="btn btn-outline-danger">Clear Grid</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
+            <span class="badge bg-white text-dark border"><div class="legend-icon start-icon"></div> Start</span>
+            <span class="badge bg-white text-dark border"><div class="legend-icon end-icon"></div> End</span>
+            <span class="badge bg-white text-dark border"><div class="legend-icon wall-icon"></div> Wall</span>
+            <span class="badge bg-white text-dark border"><div class="legend-icon visited-icon"></div> Visited</span>
+            <span class="badge bg-white text-dark border"><div class="legend-icon path-icon"></div> Shortest Path</span>
+        </div>
+
+        <div id="status-alert" class="alert alert-danger text-center d-none" role="alert">
+            <strong>No Path Found!</strong> The target is unreachable.
+        </div>
+
+        <div class="d-flex justify-content-center overflow-auto">
+            <div id="grid-container"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
